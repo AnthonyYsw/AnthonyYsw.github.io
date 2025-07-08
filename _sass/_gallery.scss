@@ -1,0 +1,136 @@
+.gallery-page-content h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* 1. 画廊容器样式，负责居中布局 */
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 30px;
+}
+
+.photo-container {
+    position: relative;
+    margin: 0;
+    
+    /* 新增：卡纸的颜色 (一个柔和的米白色) */
+    background-color: #f5f5f5; 
+
+    /* 新增：画框的样式 (15像素宽的深棕色实线边框) */
+    border: 15px solid #ffffff; 
+
+    /* 新增：卡纸的宽度 (在画框和图片之间留出25像素的空白) */
+    padding: 24.27px; 
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* 阴影现在会应用到画框上，效果更好 */
+}
+
+/* 3. 缩略图样式 */
+.thumbnail {
+    display: block;
+    width: 100%;
+    cursor: zoom-in;
+}
+
+/* =================================================================== */
+/*           4. EXIF信息的新样式 (Final Version)                     */
+/* =================================================================== */
+
+/* =================================================================== */
+/*           4. EXIF信息的新样式 (Final Version)                     */
+/* =================================================================== */
+
+.exif-info {
+    /* --- 核心定位属性 --- */
+    position: absolute;
+    
+    /* 关键点1: 将信息块的左侧与父容器(画框)的右侧对齐 */
+    right: 25px; 
+    bottom: 0%;
+
+    /* --- 样式属性 --- */
+    color: #666;
+    font-size: 14px;
+    font-family: Helvetica, sans-serif; /* 增加一个备用字体 */
+    text-align: left;
+    
+    /* 让容器宽度自适应内容，保证不会意外换行 */
+    width: max-content; 
+
+    /* --- 悬停效果 (不变) --- */
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* 这个规则保持不变，用于换行显示 */
+.exif-info span {
+    display: block;
+    line-height: 1.4;
+}
+
+/* 这个规则也保持不变 */
+.photo-container:hover .exif-info {
+    opacity: 1;
+}
+
+
+
+
+/* =================================================================== */
+/*                5. 弹出层 (Lightbox) 的正确样式                     */
+/* =================================================================== */
+
+#lightbox {
+    /* 关键修正：默认状态只保留 display: none; */
+    /* JS会在需要时将其动态改为 'flex' 来显示 */
+    display: none;
+
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+
+    /* 这些是布局属性，当 display 为 flex 时生效 */
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 5px;
+    animation: zoomIn 0.3s ease-in-out;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close:hover {
+    color: #ccc;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

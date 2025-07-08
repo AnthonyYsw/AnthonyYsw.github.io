@@ -1,0 +1,12 @@
+<!-- _includes/photo.html -->
+
+<figure class="photo-container">
+    <img class="thumbnail"
+         src="{{ include.small_src }}"
+         data-large-src="{{ include.large_src }}"
+         {% if include.aperture %}data-aperture="{{ include.aperture }}"{% endif %}
+         {% if include.shutter %}data-shutter="{{ include.shutter }}"{% endif %}
+         {% if include.iso %}data-iso="{{ include.iso }}"{% endif %}
+         alt="{{ include.alt | default: "Photo" }}">
+    <figcaption class="exif-info"></figcaption>
+</figure>
