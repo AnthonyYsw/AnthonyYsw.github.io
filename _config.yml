@@ -11,4 +11,6 @@ lang: en_GB
 theme: null
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
