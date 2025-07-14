@@ -8,5 +8,6 @@ title: Contact
 
 <ul>
   <li><strong>Email:</strong> anthony.yang.22@ucl.ac.uk</li>
+  <li><strong>Website:</strong> anthonyysw.github.io</li>
   <li><a href="https://github.com/AnthonyYsw"><strong>GitHub:</strong> AnthonyYsw</a></li>
 </ul>
