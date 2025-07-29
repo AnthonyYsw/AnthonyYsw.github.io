@@ -6,7 +6,7 @@
          data-large-src="{{ include.large_src }}"
          {% if include.aperture %}data-aperture="{{ include.aperture }}"{% endif %}
          {% if include.shutter %}data-shutter="{{ include.shutter }}"{% endif %}
-         {% if include.iso %}data-iso="{{ include.iso }}"{% endif %}
+         {% if include.focal %}data-focal="{{ include.focal }}"{% endif %}
          alt="{{ include.alt | default: "Photo" }}">
     <figcaption class="exif-info"></figcaption>
 </figure>

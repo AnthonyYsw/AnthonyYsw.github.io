@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // --- 1. 处理EXIF数据显示 ---
         const aperture = thumb.dataset.aperture;
         const shutter = thumb.dataset.shutter;
-        const iso = thumb.dataset.iso;
+        const focal = thumb.dataset.focal;
         
         const exifParts = []; // 创建一个空数组来存放EXIF信息
         
@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (shutter) {
             exifParts.push(shutter);
         }
-        if (iso) {
-            exifParts.push(`ISO ${iso}`); // 为ISO加上前缀
+        if (focal) {
+            exifParts.push(`${focal}`); // 为focal加上前缀
         }
         
         // 只有当数组不为空时，才把内容显示出来
