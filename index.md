@@ -7,7 +7,6 @@ title: "Home"
 
 This is my personal space on the web, built from scratch. I'm excited to share my thoughts and projects with you. I focus on:
 
-* Semiconductor
-* Optoelectronics
-* Photography
-* Morden Arts
+* Molecular Thermal Device
+* Nanofabrication
+* Nanoelectronics measurements
