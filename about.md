@@ -24,6 +24,8 @@ Investigating the electrical properties of self-assembled monolayers (SAMs) for 
 * **Degree Classification:** First Class Honours
 * **Core Courses:** Statistical Physics of Matter (89), Quantum Mechanics (83), Practical Machine Learning for Physicists (78), Thermal Physics and the Properties of Matter (83), Mathematical Methods I, II, III (86, 82, 67), Practical Physics and Computing (71), Practical Skills (72), etc.
 
+---
+
 ## Research Experience
 
 ### Quantum Device
@@ -49,6 +51,8 @@ Investigating the electrical properties of self-assembled monolayers (SAMs) for 
 2023–2024
 
 Contributed to the development of integrated tools for solver GUI and post-processing in turbomachinery CFD simulations, utilizing C++, the Qt framework, and VTK (Visualization Toolkit). These tools enable advanced visualisation of the meridional plane and spanwise sections.
+
+---
 
 ## Professional Skills
 
@@ -88,6 +92,8 @@ Contributed to the development of integrated tools for solver GUI and post-proce
 
 * English (Fluent)
 * Chinese (Native)
+
+---
 
 ## Work Experience
 
