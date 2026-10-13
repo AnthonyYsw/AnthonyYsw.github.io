@@ -1,32 +1,11 @@
-// base.scss
-/*-- Base Variables --*/
-$backgroundColor: #ffffff;
-$bodyColor: #000000;
-$bodyFont: "Libre Baskerville", serif;
-
-/*-- Color Variables --*/
-:root {
-  --text-color: #000000;
-  --background-color: #ffffff;
-  /* CHANGED: Brand color is now black for a monochrome theme */
-  --brand-color: #000000;
-  --light-grey: #e8e8e8;
-}
-
-
-/*
-================================================================
-General Body & Layout Styles
-================================================================
-*/
+// Document defaults and the shared content wrapper.
 body {
-  font-family: $bodyFont;
+  font-family: $body-font;
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--background-color);
   margin: 0;
 
-  /* --- STICKY FOOTER --- */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -38,171 +17,13 @@ a {
 }
 
 .wrapper {
-  max-width: 800px;
+  max-width: $content-width;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: $gutter;
+  padding-right: $gutter;
 }
 
-/* --- ADDED FOR STICKY FOOTER --- */
-/* This makes the main content area expand and push the footer down */
 main {
   flex: 1 0 auto;
-}
-
-
-/*
-================================================================
-Site Header Styles (Frosted Glass & Sticky)
-================================================================
-*/
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
-  /* --- Frosted Glass Effect --- */
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(12px);
-
-  padding: 15px 0;
-}
-
-.site-title {
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: -1px;
-  text-decoration: none;
-  color: var(--text-color);
-}
-.site-title:hover {
-  /* This will now be black, as defined in :root */
-  color: var(--brand-color);
-}
-
-
-/*
-================================================================
-Site Navigation Styles (Button Hover Effect)
-================================================================
-*/
-.site-nav {
-  float: right;
-  line-height: 40px;
-}
-
-.site-nav a {
-  color: var(--text-color);
-  text-decoration: none;
-  margin-left: 8px;
-  padding: 8px 15px;
-  border-radius: 8px;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-}
-
-.site-nav a:visited {
-  color: var(--text-color);
-}
-
-.site-nav a:hover {
-  /* The text color no longer needs to change on hover */
-  color: var(--text-color);
-  /* The requested light gray background */
-  background-color: rgba(0, 0, 0, 0.08);
-  text-decoration: none;
-}
-
-
-/*
-================================================================
-Post and Footer Styles
-================================================================
-*/
-h1, h2, h3 { font-weight: 600; }
-.page-heading, .post-title { font-size: 32px; }
-
-.post-list {
-  list-style: none;
-  padding-left: 0;
-}
-.post-list > li {
-  margin-bottom: 25px;
-}
-.post-meta {
-  color: #828282;
-  font-size: 14px;
-}
-.post-link {
-  font-size: 22px;
-  text-decoration: none;
-  /* This will now be black, as defined in :root */
-  color: var(--brand-color);
-}
-.post-link:hover {
-  text-decoration: underline;
-}
-
-.site-footer {
-  border-top: 1px solid var(--light-grey);
-  padding: 20px 0;
-  font-size: 14px;
-  color: #828282;
-  /* --- ADDED FOR STICKY FOOTER --- */
-  flex-shrink: 0;
-}
-
-/*
-================================================================
-Code Block Styles  <-- 添加在这里
-================================================================
-*/
-pre {
-  background-color: #f5f5f5; /* 一个非常淡的浅灰色 */
-  border: 1px solid #e0e0e0;  /* 一个稍微深一点的边框，增加立体感 */
-  border-radius: 8px;         /* 和你的导航按钮一致的圆角 */
-  padding: 15px;              /* 内边距，让代码和边框有距离 */
-  overflow-x: auto;           /* 如果代码行太长，出现横向滚动条 */
-  font-size: 14px;            /* 设置合适的字体大小 */
-}
-
-pre code {
-  font-family: 'Menlo', 'Consolas', 'Courier New', monospace; /* 使用等宽字体，更适合代码 */
-  color: #333333;
-  background: none;
-  padding: 0;
-}
-
-/*
-================================================================
-Button Styles
-================================================================
-*/
-.download-button {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #e8e8e8;  /* 浅灰色背景 */
-  color: var(--text-color);
-  border-radius: 60px;         /* 与导航按钮一致的圆角 */
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-  margin: 20px 0;
-  
-  /* 添加细微的阴影，增加层次感 */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.download-button:hover {
-  background-color: #d8d8d8;  /* 悬停时稍微深一点的灰色 */
-  transform: translateY(-2px); /* 轻微上移效果 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.download-button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

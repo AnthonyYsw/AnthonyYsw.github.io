@@ -1,36 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>{{ page.title }} - {{ site.title }}</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-
-    <link rel="icon" type="image/x-icon" href="{{ '/assets/icons/favicon.ico' | relative_url }}">
+    {% include head.html %}
   </head>
   <body>
-    
-    <header class="site-header">
-      <div class="wrapper">
-        <a class="site-title" href="{{ "/" | relative_url }}">Anthony</a>
-        
-        <!-- START OF CHANGES -->
-        <nav class="site-nav">
-          <a href="{{ "/" | relative_url }}">Home</a>
-          <a href="{{ "/posts" | relative_url }}">Posts</a>
-          <a href="{{ "/about" | relative_url }}">About</a>
-          <a href="{{ "/contact" | relative_url }}">Contact</a>
-          <a href="{{ "/404" | relative_url }}">Blank Page</a>
-        </nav>
-        <!-- END OF CHANGES -->
-        
-      </div>
-    </header>
+    {% include header.html %}
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -38,19 +12,8 @@
       </div>
     </main>
 
-    <footer class="site-footer">
-      <div class="wrapper">
-        <p>&copy; 2025-2026 {{ site.title }}. All rights reserved.</p>
-      </div>
-    </footer>
-
-    <!-- 弹出层的HTML代码 -->
-    <div id="lightbox">
-        <span class="close">&times;</span>
-        <img id="lightbox-img" src="">
-    </div>
-
-    <!-- 链接JavaScript文件 -->
+    {% include footer.html %}
+    {% include lightbox.html %}
     <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 
   </body>

@@ -1,0 +1,11 @@
+// Shared typography, dimensions and theme colours.
+$body-font: "Libre Baskerville", serif;
+$content-width: 800px;
+$gutter: 15px;
+
+:root {
+  --text-color: #000000;
+  --background-color: #ffffff;
+  --brand-color: #000000;
+  --light-grey: #e8e8e8;
+}

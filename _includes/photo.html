@@ -2,11 +2,11 @@
 
 <figure class="photo-container">
     <img class="thumbnail"
-         src="{{ include.small_src }}"
-         data-large-src="{{ include.large_src }}"
-         {% if include.aperture %}data-aperture="{{ include.aperture }}"{% endif %}
-         {% if include.shutter %}data-shutter="{{ include.shutter }}"{% endif %}
-         {% if include.focal %}data-focal="{{ include.focal }}"{% endif %}
-         alt="{{ include.alt | default: "Photo" }}">
+         src="{{ include.small_src | escape }}"
+         data-large-src="{{ include.large_src | escape }}"
+         {% if include.aperture %}data-aperture="{{ include.aperture | escape }}"{% endif %}
+         {% if include.shutter %}data-shutter="{{ include.shutter | escape }}"{% endif %}
+         {% if include.focal %}data-focal="{{ include.focal | escape }}"{% endif %}
+         alt="{{ include.alt | default: "Photo" | escape }}">
     <figcaption class="exif-info"></figcaption>
 </figure>

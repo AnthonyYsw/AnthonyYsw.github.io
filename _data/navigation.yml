@@ -1,0 +1,10 @@
+- title: Home
+  url: /
+- title: Posts
+  url: /posts
+- title: About
+  url: /about
+- title: Contact
+  url: /contact
+- title: Blank Page
+  url: /404

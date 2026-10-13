@@ -1,59 +1,37 @@
-// script.js
+document.addEventListener('DOMContentLoaded', () => {
+  function initPhotoCaptions() {
+    document.querySelectorAll('.photo-container').forEach(container => {
+      const thumbnail = container.querySelector('.thumbnail');
+      const caption = container.querySelector('.exif-info');
+      if (!thumbnail || !caption) return;
 
-document.addEventListener('DOMContentLoaded', function() {
-    // 获取所有图片容器
-    const photoContainers = document.querySelectorAll('.photo-container');
+      const { aperture, shutter, focal } = thumbnail.dataset;
+      caption.textContent = [aperture, shutter, focal].filter(Boolean).join(' · ');
+    });
+  }
+
+  function initLightbox() {
     const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn = document.querySelector('.close');
+    const image = document.getElementById('lightbox-img');
+    const closeButton = lightbox?.querySelector('.close');
+    if (!lightbox || !image || !closeButton) return;
 
-    // 遍历每一个图片容器
-    photoContainers.forEach(container => {
-        const thumb = container.querySelector('.thumbnail');
-        const exifInfo = container.querySelector('.exif-info');
+    // Delegate clicks so every photo shares the same open/close behaviour.
+    document.addEventListener('click', event => {
+      const thumbnail = event.target.closest('.photo-container .thumbnail');
+      if (!thumbnail?.dataset.largeSrc) return;
 
-        // --- 1. 处理EXIF数据显示 ---
-        const aperture = thumb.dataset.aperture;
-        const shutter = thumb.dataset.shutter;
-        const focal = thumb.dataset.focal;
-        
-        const exifParts = []; // 创建一个空数组来存放EXIF信息
-        
-        // 如果数据存在，就把它添加到数组里
-        if (aperture) {
-            exifParts.push(aperture);
-        }
-        if (shutter) {
-            exifParts.push(shutter);
-        }
-        if (focal) {
-            exifParts.push(`${focal}`); // 为focal加上前缀
-        }
-        
-        // 只有当数组不为空时，才把内容显示出来
-        if (exifParts.length > 0) {
-            exifInfo.textContent = exifParts.join(' · '); // 用一个点来分隔各项数据
-        }
-
-        // --- 2. 处理点击放大事件 ---
-        thumb.addEventListener('click', function() {
-            const largeSrc = this.dataset.largeSrc;
-            if (largeSrc) {
-                lightboxImg.src = largeSrc;
-                lightbox.style.display = 'flex';
-            }
-        });
+      image.src = thumbnail.dataset.largeSrc;
+      lightbox.style.display = 'flex';
     });
 
-    // --- 3. 关闭弹出层的逻辑 (和之前一样) ---
-    function closeLightbox() {
+    lightbox.addEventListener('click', event => {
+      if (event.target === lightbox || closeButton.contains(event.target)) {
         lightbox.style.display = 'none';
-    }
-
-    closeBtn.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', function(event) {
-        if (event.target === lightbox) {
-            closeLightbox();
-        }
+      }
     });
+  }
+
+  initPhotoCaptions();
+  initLightbox();
 });

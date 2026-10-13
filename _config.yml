@@ -1,11 +1,13 @@
-# _config.yml
-
-url: "https://AnthonyYsw.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+# Site identity
+url: "https://AnthonyYsw.github.io"
 baseurl: ""
-title: "Siwei Yang" # the name of your site, e.g. ACME Corp.
+title: "Siwei Yang"
+header_title: "Anthony"
 description: Anthony's Original Blog
+copyright_years: "2025-2026"
+date_format: "%d %B %Y"
 
-# language
+# Language and build settings
 lang: en_GB
 
 theme: null
@@ -14,3 +16,13 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+# Keep maintenance documentation out of the published site.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md

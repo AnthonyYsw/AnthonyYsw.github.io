@@ -1,0 +1,11 @@
+<header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.header_title | escape }}</a>
+
+    <nav class="site-nav">
+      {% for item in site.data.navigation %}
+        <a href="{{ item.url | relative_url | escape }}">{{ item.title | escape }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>

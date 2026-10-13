@@ -1,0 +1,14 @@
+base_url: "https://anthonyblog.oss-eu-central-1.aliyuncs.com/260105_Cambridge_Winter/"
+thumbnail_query: "?x-oss-process=image/resize,p_60/quality,q_85"
+defaults:
+  aperture: "f/2"
+  focal: "40mm"
+photos:
+  - file: "DSC_1984.JPG"
+    shutter: "1/4000"
+  - file: "DSC_1973.JPG"
+    shutter: "1/6400"
+  - file: "DSC_1980.JPG"
+    shutter: "1/2500"
+  - file: "DSC_1992.JPG"
+    shutter: "1/8000"

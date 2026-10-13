@@ -1,0 +1,22 @@
+{%- assign gallery = site.data.galleries[include.id] -%}
+<div class="gallery">
+  {% for photo in gallery.photos %}
+    {%- assign large_src = gallery.base_url | append: photo.file -%}
+    {%- assign thumbnail_query = photo.thumbnail_query -%}
+    {%- if thumbnail_query == nil -%}
+      {%- assign thumbnail_query = gallery.thumbnail_query -%}
+    {%- endif -%}
+    {%- assign small_src = large_src | append: thumbnail_query -%}
+    {%- assign aperture = photo.aperture | default: gallery.defaults.aperture -%}
+    {%- assign shutter = photo.shutter | default: gallery.defaults.shutter -%}
+    {%- assign focal = photo.focal | default: gallery.defaults.focal -%}
+    {% include photo.html
+      small_src=small_src
+      large_src=large_src
+      alt=photo.alt
+      aperture=aperture
+      shutter=shutter
+      focal=focal
+    %}
+  {% endfor %}
+</div>

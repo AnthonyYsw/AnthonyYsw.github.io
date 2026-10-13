@@ -1,18 +1,14 @@
 source "https://rubygems.org"
 
-# Core Jekyll
-gem "jekyll"
+# Keep the existing Jekyll 3 / Sass 3 toolchain reproducible.
+gem "jekyll", "~> 3.10"
 
-# This is the modern, fast SASS converter
-gem "jekyll-sass-converter"
+gem "jekyll-sass-converter", "~> 1.5"
 
-# Markdown Parser - Add this line
+# Markdown parser
 gem "kramdown-parser-gfm"
 
-# Add all plugins from your _config.yml file here
+# Plugins listed in _config.yml
 gem "jekyll-feed"
 gem "jekyll-seo-tag"
 gem "jekyll-sitemap"
-
-# Required for 'bundle exec jekyll serve' with Jekyll 4+
-# gem "webrick"

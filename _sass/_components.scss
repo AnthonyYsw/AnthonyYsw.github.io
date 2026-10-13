@@ -1,0 +1,72 @@
+// Post lists, code blocks and the CV download button.
+h1, h2, h3 { font-weight: 600; }
+
+.page-heading, .post-title { font-size: 32px; }
+
+.post-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.post-list > li {
+  margin-bottom: 25px;
+}
+
+.post-meta {
+  color: #828282;
+  font-size: 14px;
+}
+
+.post-link {
+  font-size: 22px;
+  text-decoration: none;
+
+  color: var(--brand-color);
+}
+
+.post-link:hover {
+  text-decoration: underline;
+}
+
+pre {
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: $gutter;
+  overflow-x: auto;
+  font-size: 14px;
+}
+
+pre code {
+  font-family: 'Menlo', 'Consolas', 'Courier New', monospace;
+  color: #333333;
+  background: none;
+  padding: 0;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #e8e8e8;
+  color: var(--text-color);
+  border-radius: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  margin: 20px 0;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.download-button:hover {
+  background-color: #d8d8d8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.download-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

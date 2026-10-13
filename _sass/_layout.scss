@@ -1,0 +1,58 @@
+// Sticky header, navigation and footer.
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(12px);
+
+  padding: $gutter 0;
+}
+
+.site-title {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.site-title:hover {
+  color: var(--brand-color);
+}
+
+.site-nav {
+  float: right;
+  line-height: 40px;
+}
+
+.site-nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  margin-left: 8px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.site-nav a:visited {
+  color: var(--text-color);
+}
+
+.site-nav a:hover {
+  color: var(--text-color);
+
+  background-color: rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+}
+
+.site-footer {
+  border-top: 1px solid var(--light-grey);
+  padding: 20px 0;
+  font-size: 14px;
+  color: #828282;
+
+  flex-shrink: 0;
+}

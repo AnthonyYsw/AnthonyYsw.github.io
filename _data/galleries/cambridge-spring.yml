@@ -1,0 +1,16 @@
+base_url: "https://anthonyblog.oss-eu-central-1.aliyuncs.com/260321_Cambridge_Spring/"
+thumbnail_query: "?x-oss-process=image/resize,p_60/quality,q_85"
+defaults:
+  aperture: "N/A"
+  shutter: "N/A"
+  focal: "N/A"
+photos:
+  - file: "DSC_2008.jpg"
+  - file: "DSC_1995.jpg"
+  - file: "DSC_1999.jpg"
+  - file: "DSC_2014.jpg"
+  - file: "DSC_2017.jpg"
+  - file: "DSC_2019.jpg"
+  - file: "DSC_2030.jpg"
+  - file: "DSC_2033.jpg"
+  - file: "DSC_2036.jpg"
